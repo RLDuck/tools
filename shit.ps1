@@ -63,7 +63,7 @@ Write-Host "  Targeting structural artifacts, not conventions.`n" -ForegroundCol
 Write-Host "[1/6] Checking Minecraft connection destination..." -ForegroundColor Yellow
 
 try {
-    $javaPIDs = (Get-Process -Name "java" -ErrorAction SilentlyContinue).Id
+    $javaPIDs = (Get-Process -Name "javaw" -ErrorAction SilentlyContinue).Id
 
     if ($javaPIDs) {
         # use netstat with -n (numeric) -o (PID) -p TCP
