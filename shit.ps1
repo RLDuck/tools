@@ -85,12 +85,12 @@ try {
                     if ($isPrivate) {
                         Add-Flag `
                             -Title    "Minecraft connected to private IP on :25565" `
-                            -Detail   "java.exe (PID $pid) has ESTABLISHED connection to ${remoteIP}:25565 - this is a local proxy, not a real server." `
+                            -Detail   "javaw.exe (PID $pid) has ESTABLISHED connection to ${remoteIP}:25565 - this is a local proxy, not a real server." `
                             -Weight   10 `
                             -Severity "CRITICAL"
                         Write-Host "  [CRITICAL] java.exe -> ${remoteIP}:25565 (private IP)" -ForegroundColor Red
                     } else {
-                        Write-Host "  java.exe -> ${remoteIP}:25565 (public - normal)" -ForegroundColor Green
+                        Write-Host "  javaw.exe -> ${remoteIP}:25565 (public - normal)" -ForegroundColor Green
                     }
                 }
             }
@@ -100,8 +100,8 @@ try {
             Write-Host "  No suspicious Minecraft connections found." -ForegroundColor Green
         }
     } else {
-        Add-Info "java.exe not running - Minecraft not open."
-        Write-Host "  java.exe not running." -ForegroundColor DarkGray
+        Add-Info "javaw.exe not running - Minecraft not open."
+        Write-Host "  javaw.exe not running." -ForegroundColor DarkGray
     }
 } catch {
     Add-Info "Signal 1 error: $_"
